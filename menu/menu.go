@@ -1,8 +1,12 @@
 package menu
 
-import "fmt"
+import (
+	"bufio"
+	"fmt"
+	"os"
+)
 
-var menuOptions = []string{
+var MenuOptions = []string{
 	"Register User",
 	"Login User",
 	"Add ToDoItem",
@@ -13,9 +17,11 @@ var menuOptions = []string{
 	"Exit",
 }
 
+var reader = bufio.NewReader(os.Stdin)
+
 func ShowMenu() {
 	fmt.Println("Select one of the options below")
-	for i := 0; i < len(menuOptions); i++ {
-		fmt.Printf("%v. %v\n", (i + 1), menuOptions[i])
+	for i := 0; i < len(MenuOptions); i++ {
+		fmt.Printf("%v. %v\n", (i + 1), MenuOptions[i])
 	}
 }
